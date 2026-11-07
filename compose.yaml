@@ -1,0 +1,23 @@
+services:
+  painel:
+    build: .
+    init: true
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      APP_HOST: 0.0.0.0
+      APP_PORT: "8080"
+      DATABASE_PATH: /app/data/lab.sqlite3
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - lab-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  lab-data:

@@ -1,0 +1,5 @@
+{"event_id":"EV-001","timestamp_utc":"2026-01-01T01:58:00Z","source":"mail_gateway","type":"phishing_report","user":"coord_demo","details":"mensagem sintética de atualização urgente do painel"}
+{"event_id":"EV-002","timestamp_utc":"2026-01-01T02:14:00Z","source":"vpn_gateway","type":"vpn_login","user":"coord_demo","source_zone":"external_untrusted","hour":2}
+{"event_id":"EV-003","timestamp_utc":"2026-01-01T02:16:00Z","source":"web_panel","type":"http_request","user":"coord_demo","query":"' OR '1'='1"}
+{"event_id":"EV-004","timestamp_utc":"2026-01-01T02:19:00Z","source":"mqtt_broker","type":"actuator_command","device_id":"pump_demo","hour":2,"profile":"unapproved"}
+{"event_id":"EV-005","timestamp_utc":"2026-01-01T02:30:00Z","source":"edge_node","type":"wan_down","site":"escola_municipal"}
