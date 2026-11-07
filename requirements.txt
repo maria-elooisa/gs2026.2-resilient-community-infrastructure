@@ -1,1 +1,0 @@
-# The lab uses only the Python standard library.

@@ -2,6 +2,7 @@
 
 import os
 import sqlite3
+from pathlib import Path
 
 
 SAMPLE_ROWS = [
@@ -13,6 +14,8 @@ SAMPLE_ROWS = [
 
 def connect(path=None):
     path = path or os.environ.get("DATABASE_PATH", "/tmp/vila_aurora.sqlite3")
+    if path != ":memory:":
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
     connection = sqlite3.connect(path)
     connection.row_factory = sqlite3.Row
     return connection

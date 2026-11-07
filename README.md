@@ -48,17 +48,16 @@ Os testes verificam a diferença entre as consultas vulnerável e parametrizada,
 - `edge/`: modelo de borda offline-first, fila local SQLite e reconciliação idempotente.
 - `detection/`: regras locais para login VPN anômalo, padrão de SQL Injection, certificado inválido e comando de atuador fora do perfil.
 - `forensics/`: eventos sintéticos do INC-VA-0712 e ferramenta para gerar hash SHA-256, manifesto e cadeia de custódia inicial.
-- `data/`: dados exclusivamente fictícios para demonstrações e campanha simulada.
 - `tests/`: testes repetíveis sem acessar a Internet.
 - `docs/`: matriz de rastreabilidade entre requisitos do professor e evidências que a equipe ainda precisa produzir.
 
-## Evidências forenses de exemplo
+## Evidências forenses
 
 ```powershell
-python forensics/create_evidence.py --collector equipe-lab --location maquina-local
+python forensics/create_evidence.py --collector NOME_DO_COLETOR --location MAQUINA_DO_LAB
 ```
 
-O comando cria arquivos em `artifacts/` com horários UTC, hashes e campos de cadeia de custódia. Substitua os campos de coletor por integrantes reais somente no relatório final; não inclua dados pessoais no repositório público.
+O comando cria localmente um manifesto com horário UTC, hash e dados de cadeia de custódia. Use o nome verdadeiro do integrante responsável pela coleta simulada e confira os campos antes de incluir essa evidência no E4. O manifesto gerado fica em `artifacts/`, pasta ignorada pelo Git.
 
 ## Teste de continuidade
 
@@ -73,4 +72,4 @@ O teste de unidade prova rapidamente o comportamento do buffer e da reconciliaç
 
 ## Escopo e próximos passos
 
-Este repositório é a base executável do E2, não uma alegação de que todos os RTs já foram implementados. A matriz `docs/traceability.md` separa o que o protótipo demonstra do que ainda requer configuração, teste ou evidência. Em particular, emissão e revogação de certificados mTLS, VPN WireGuard com MFA administrativo, SPF/DKIM/DMARC, campanha de phishing com contas fictícias, SIEM, IA defensiva com métricas, RIPD, custos, acessibilidade e teste WAN de 30 minutos precisam de configuração e evidências adicionais antes da entrega final.
+Este repositório é a base executável do E2, não uma alegação de que todos os RTs já foram implementados. Os dados sintéticos do banco são semeados por `app/database.py`, e o cenário fictício do incidente está em `forensics/incident_events.jsonl`. A matriz `docs/traceability.md` separa o que o protótipo demonstra do que ainda requer configuração, teste ou evidência. Em particular, emissão e revogação de certificados mTLS, VPN WireGuard com MFA administrativo, SPF/DKIM/DMARC, campanha de phishing com contas fictícias, SIEM, IA defensiva com métricas, RIPD, custos, acessibilidade e teste WAN de 30 minutos precisam de configuração e evidências adicionais antes da entrega final.

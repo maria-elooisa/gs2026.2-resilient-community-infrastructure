@@ -1,4 +1,0 @@
-scenario_id,target_type,event,occurred_at_utc,synthetic
-SIM-001,fictional_test_account,email_opened,2026-01-01T10:00:00Z,true
-SIM-001,fictional_test_account,link_clicked,2026-01-01T10:02:00Z,true
-SIM-001,fictional_test_account,reported,2026-01-01T10:03:00Z,true
