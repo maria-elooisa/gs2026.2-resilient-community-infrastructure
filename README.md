@@ -4,8 +4,8 @@ Laboratório local e isolado para o protótipo E2 e para preparar evidências do
 
 ## Requisitos
 
-- Docker Desktop com Docker Compose v2, para executar o laboratório completo.
-- Python 3.11 ou superior, para executar os testes locais.
+- Python 3.11 ou superior, para executar o painel e os testes locais.
+- Docker Desktop com Docker Compose v2, como opção para iniciar o painel em container.
 
 ## Início rápido
 
@@ -14,6 +14,12 @@ docker compose up --build
 ```
 
 Abra `http://127.0.0.1:8080/`. Para encerrar, use `Ctrl+C` e depois `docker compose down`.
+
+Sem Docker, inicie o painel diretamente com Python:
+
+```powershell
+python -m app.server
+```
 
 O painel oferece `/health`, `/access-history/vulnerable?q=...` e `/access-history/fixed?q=...`. Os dois últimos caminhos consultam somente dados sintéticos. A rota vulnerável existe exclusivamente para demonstrar a falha no próprio laboratório; não a exponha à rede.
 
